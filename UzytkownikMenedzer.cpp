@@ -14,8 +14,6 @@ void UzytkownikMenedzer::rejestracjaUzytkownika()
 Uzytkownik UzytkownikMenedzer:: podajDaneNowegoUzytkownika()
 {
     Uzytkownik uzytkownik;
-
-
     uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
 
     do
@@ -60,5 +58,10 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login)
         cout << uzytkownicy[i].pobierzLogin() << endl;
         cout << uzytkownicy[i].pobierzHaslo() << endl;
     }
+}
+
+void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
+{
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
