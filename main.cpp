@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa;
+    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt");  //przesy³a nazwê pliku do kolejnych klas wykorzystujac listy inicjalizacyjne w kolejnych klasach
     //ksiazkaAdresowa.wczytajUzytkownikaZPliku();
 
 
