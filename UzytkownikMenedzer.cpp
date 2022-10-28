@@ -1,5 +1,11 @@
 #include "UzytkownikMenedzer.h"
 
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+
+}
+
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -87,17 +93,21 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
+                    cout<< " wiersz 97 :idZalogowanegoUzytkownika wewnatrz UzytkownikMenedzer->"<< itr -> pobierzId()<<endl;
                     return itr -> pobierzId();
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
+            idZalogowanegoUzytkownika = 0;
             return 0;
         }
         itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
+    idZalogowanegoUzytkownika = 0;
     return 0;
 }
 
