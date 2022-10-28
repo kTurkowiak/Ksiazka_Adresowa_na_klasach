@@ -74,10 +74,11 @@ int main()
             case '6':
                 edytujAdresata(adresaci);
                 break;
-            case '7':
-                zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
-                break;
             */
+            case '7':
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+                break;
+
             case '8':
                 idZalogowanegoUzytkownika = 0;
             //    adresaci.clear();

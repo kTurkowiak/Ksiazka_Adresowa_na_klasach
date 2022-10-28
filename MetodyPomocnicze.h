@@ -16,7 +16,6 @@ public:
     static char wczytajZnak();
 
 
-
 };
 
 #endif

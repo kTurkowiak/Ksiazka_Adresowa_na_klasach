@@ -14,6 +14,8 @@ class KsiazkaAdresowa
     UzytkownikMenedzer uzytkownikMenedzer;
 
 
+
+
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami) {
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
@@ -23,6 +25,8 @@ public:
     int logowanieUzytkownika();
     char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego();
     char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+
 
 };
 
