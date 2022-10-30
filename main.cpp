@@ -15,10 +15,12 @@ int main()
    // ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
    // ksiazkaAdresowa.logowanieUzytkownika();
     int idZalogowanegoUzytkownika = 0;
+    int idOstatniegoAdresata = 0;
     char wybor;
 
        while (true)
     {
+
         if (idZalogowanegoUzytkownika == 0)
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
@@ -44,29 +46,29 @@ int main()
         else
         {
 
-           // if (adresaci.empty() == true)
+            //if (adresaci.empty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-            //    idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-
+            idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
             case '1':
-            //    idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
                 break;
-            case '2':
+            //case '2':
             //    wyszukajAdresatowPoImieniu(adresaci);
-                break;
-            /*
-            case '3':
-                wyszukajAdresatowPoNazwisku(adresaci);
-                break;
+            //    break;
+
+            //case '3':
+            //    wyszukajAdresatowPoNazwisku(adresaci);
+            //    break;
             case '4':
-                wyswietlWszystkichAdresatow(adresaci);
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
+                /*
             case '5':
                 idUsunietegoAdresata = usunAdresata(adresaci);
                 idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
@@ -81,7 +83,7 @@ int main()
 
             case '8':
                 idZalogowanegoUzytkownika = 0;
-            //    adresaci.clear();
+                ksiazkaAdresowa.wylogowanie();
                 break;
             }
         }
