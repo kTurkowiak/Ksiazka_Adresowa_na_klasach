@@ -15,10 +15,12 @@ int main()
    // ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
    // ksiazkaAdresowa.logowanieUzytkownika();
     int idZalogowanegoUzytkownika = 0;
+    int idOstatniegoAdresata = 0;
     char wybor;
 
        while (true)
-    {   cout<<"idZalogowanegoUzytkownika->"<<idZalogowanegoUzytkownika<<endl<<endl; // do pozniejszego usuniecia
+    {   cout<<" linia 21:idZalogowanegoUzytkownika w Menu glownym->"<<idZalogowanegoUzytkownika<<endl<<endl; // do pozniejszego usuniecia
+        cout<<" linia 22:idOstatniegoAdresata w Menu glownym->"<<idOstatniegoAdresata<<endl<<endl; // do pozniejszego usuniecia
         if (idZalogowanegoUzytkownika == 0)
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
@@ -55,7 +57,7 @@ int main()
             switch (wybor)
             {
             case '1':
-            ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika);
+                idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
 
             //    idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
                 break;

@@ -6,7 +6,7 @@
 //}
 
 
-void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
+int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
 
     Adresat adresat;
@@ -14,21 +14,19 @@ void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
     //system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
 
-
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
+    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
     //adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
 
     adresaci.push_back(adresat);
     dopiszAdresataDoPliku(adresat);
     wyswietlWszystkichAdresatow();                                              //do pozniejszego usuniecia
-    //return ++idOstatniegoAdresata;
+    return ++idOstatniegoAdresata;
 }
 
-Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
+Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
     Adresat adresat;
-    int idOstatniegoAdresata = 0; //do pozniejszego usuniecia
-    //int idZalogowanegoUzytkownika = 1; // do pozniejszego przerobienia
+//    int idOstatniegoAdresata = 0; //do pozniejszego usuniecia
 
     adresat.ustawIdAdresata(++idOstatniegoAdresata);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);

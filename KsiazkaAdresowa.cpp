@@ -61,9 +61,11 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     return wybor;
 }
 
-void KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika)
+int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
-    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
+    int id;
+    id = adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    return id;
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
