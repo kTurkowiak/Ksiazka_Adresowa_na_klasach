@@ -1,3 +1,4 @@
+/*
 #ifndef ADRESATMENEDZER_H
 #define ADRESATMENEDZER_H
 
@@ -5,7 +6,7 @@
 #include <vector>
 #include <iostream>
 #include <cstdlib>
-#include <iostream>
+
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
@@ -33,3 +34,4 @@ private:
 
 
 #endif
+*/
