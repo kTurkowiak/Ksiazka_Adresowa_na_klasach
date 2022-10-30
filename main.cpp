@@ -58,16 +58,17 @@ int main()
             ksiazkaAdresowa.dodajAdresata();
             //    idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
                 break;
-            case '2':
+            //case '2':
             //    wyszukajAdresatowPoImieniu(adresaci);
-                break;
-            /*
-            case '3':
-                wyszukajAdresatowPoNazwisku(adresaci);
-                break;
+            //    break;
+
+            //case '3':
+            //    wyszukajAdresatowPoNazwisku(adresaci);
+            //    break;
             case '4':
-                wyswietlWszystkichAdresatow(adresaci);
+               // wyswietlWszystkichAdresatow(adresaci);
                 break;
+                /*
             case '5':
                 idUsunietegoAdresata = usunAdresata(adresaci);
                 idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
