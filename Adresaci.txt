@@ -1,6 +1,4 @@
-1|1|Gdf|Gdfsh|hdsf|hbsrt|htr|
-2|1|Hj67|6j5|j56|jh65|j46|
-3|4|Fsd|Gds|hds|hd|gd|
-4|1|Gf|Gf|gf|gf|gf|
-5|1||Hg|hg|hg|hg|
-6|2|Dsa|Dsa|fsa|gdsa|gew|
+
+1|1|Pierwszy|Adresat|o ID 1|przyporzadkowany do Kamila|dsa|
+2|1|Drugi|Adresat|o ID 2|przyporzadkowany do Kamila|das|
+3|2|Pierwszy|Adresat|przyporzadkowany do Ady|ds|gdsa|

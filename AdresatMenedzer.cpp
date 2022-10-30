@@ -13,7 +13,6 @@ int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatnie
 
     adresaci.push_back(adresat);
     dopiszAdresataDoPliku(adresat);
-    //wyswietlWszystkichAdresatow();                                              //do pozniejszego usuniecia
     return ++idOstatniegoAdresata;
 }
 
@@ -60,6 +59,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
     //system("cls");
     if (!adresaci.empty())
     {
+        cout << "vector size na wejsciu->" << adresaci.size() << endl;  //do pozniejszego usuniecia
         cout << "             >>> ADRESACI <<<" << endl;
         cout << "-----------------------------------------------" << endl;
         for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
@@ -72,6 +72,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
     {
         cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
     }
+    cout << "vector size na wyjsciu->" << adresaci.size() << endl;  //do pozniejszego usuniecia
     system("pause");
 }
 

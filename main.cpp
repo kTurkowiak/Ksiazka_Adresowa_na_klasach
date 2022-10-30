@@ -19,8 +19,8 @@ int main()
     char wybor;
 
        while (true)
-    {   cout<<" linia 21:idZalogowanegoUzytkownika w Menu glownym->"<<idZalogowanegoUzytkownika<<endl<<endl; // do pozniejszego usuniecia
-        cout<<" linia 22:idOstatniegoAdresata w Menu glownym->"<<idOstatniegoAdresata<<endl<<endl; // do pozniejszego usuniecia
+    {
+
         if (idZalogowanegoUzytkownika == 0)
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
@@ -51,8 +51,6 @@ int main()
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
             idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-            //    idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-            cout<<" linia 55:idOstatniegoAdresata w Menu glownym->"<<idOstatniegoAdresata<<endl<<endl; // do pozniejszego usuniecia
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
@@ -86,7 +84,6 @@ int main()
             case '8':
                 idZalogowanegoUzytkownika = 0;
                 ksiazkaAdresowa.wylogowanie();
-               //adresaci.clear();
                 break;
             }
         }
