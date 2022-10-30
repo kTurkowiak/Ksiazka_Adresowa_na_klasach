@@ -60,3 +60,9 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 
     return wybor;
 }
+
+void KsiazkaAdresowa::dodajAdresata()
+{
+    adresatMenedzer.dodajAdresata();
+}
+
