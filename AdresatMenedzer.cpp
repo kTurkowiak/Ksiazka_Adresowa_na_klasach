@@ -248,3 +248,8 @@ int AdresatMenedzer::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
     int idAdresata = MetodyPomocnicze::konwersjaStringNaInt(MetodyPomocnicze::pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
+
+void AdresatMenedzer::wylogowanie()
+{
+    adresaci.clear();
+}

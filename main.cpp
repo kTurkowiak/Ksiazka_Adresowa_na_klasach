@@ -85,6 +85,7 @@ int main()
 
             case '8':
                 idZalogowanegoUzytkownika = 0;
+                ksiazkaAdresowa.wylogowanie();
                //adresaci.clear();
                 break;
             }

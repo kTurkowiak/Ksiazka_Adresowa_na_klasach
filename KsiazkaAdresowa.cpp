@@ -79,3 +79,8 @@ int KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogow
     id = adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     return id;
 }
+
+void KsiazkaAdresowa::wylogowanie()
+{
+    adresatMenedzer.wylogowanie();
+}
