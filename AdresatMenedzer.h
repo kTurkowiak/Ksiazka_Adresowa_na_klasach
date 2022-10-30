@@ -6,6 +6,7 @@
 #include <string>
 #include <algorithm>
 
+
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
@@ -23,7 +24,7 @@ class AdresatMenedzer
 
 
 public:
-    AdresatMenedzer();
+    //AdresatMenedzer(PlikZAdresatami PLIKZADRESATAMI): plikZAdresatami(PLIKZADRESATAMI) {};
     void dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
 

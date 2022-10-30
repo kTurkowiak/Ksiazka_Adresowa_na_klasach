@@ -1,9 +1,6 @@
 #include "AdresatMenedzer.h"
 
-AdresatMenedzer::AdresatMenedzer()
-{
 
-}
 
 void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
@@ -18,8 +15,8 @@ void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
     //adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
 
     adresaci.push_back(adresat);
-    //dopiszAdresataDoPliku(adresat);
-    wyswietlWszystkichAdresatow();
+    //plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    wyswietlWszystkichAdresatow();                                              //do pozniejszego usuniecia
     //return ++idOstatniegoAdresata;
 }
 
