@@ -1,10 +1,6 @@
-1|3|Dsa|Gert|he4|hge45|ghe4|
-1|3|H65|J67|jk67|jk6|k76|
-1|1|Ht|67|hj67|jhn67|h6|
-1|4|Htr|Jt5r|yk5|jk56|j56|
-1|4|Muy|K78|k7y8|k7o8|o87|
-1|4|Gdf|Hfd|hfg|hg|gh|
-1|1|Gerg|Er|gher|he|rh|
-1|4|Gfd|Hfdg|jtr|jr|hr|
-2|4|Hgfjr|Jr5t6ju5|6u56u|y65|u65|
-3|1|Gfdh|Jht6j|j65|j6u5j5|j65|
+1|1|Gdf|Gdfsh|hdsf|hbsrt|htr|
+2|1|Hj67|6j5|j56|jh65|j46|
+3|4|Fsd|Gds|hds|hd|gd|
+4|1|Gf|Gf|gf|gf|gf|
+5|1||Hg|hg|hg|hg|
+6|2|Dsa|Dsa|fsa|gdsa|gew|

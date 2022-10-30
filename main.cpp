@@ -46,20 +46,19 @@ int main()
         else
         {
 
-           // if (adresaci.empty() == true)
+            //if (adresaci.empty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
+            idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
             //    idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-
+            cout<<" linia 55:idOstatniegoAdresata w Menu glownym->"<<idOstatniegoAdresata<<endl<<endl; // do pozniejszego usuniecia
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
             case '1':
                 idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
-
-            //    idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
                 break;
             //case '2':
             //    wyszukajAdresatowPoImieniu(adresaci);
@@ -86,7 +85,7 @@ int main()
 
             case '8':
                 idZalogowanegoUzytkownika = 0;
-            //    adresaci.clear();
+               //adresaci.clear();
                 break;
             }
         }

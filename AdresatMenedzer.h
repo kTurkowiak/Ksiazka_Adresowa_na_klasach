@@ -20,27 +20,25 @@ class AdresatMenedzer
 {
 
     vector <Adresat> adresaci;
-    //PlikZAdresatami plikZAdresatami;
-
-    //string nazwaPlikuZAdresatami;
-
 
 
 public:
-    //AdresatMenedzer(PlikZAdresatami PLIKZADRESATAMI): plikZAdresatami(PLIKZADRESATAMI) {};
-    //AdresatMenedzer();
+
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     void wyswietlWszystkichAdresatow();
-    //PlikZAdresatami();
+
     void dopiszAdresataDoPliku(Adresat adresat);
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku (int idZalogowanegoUzytkownika);
 
 private:
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
-
     bool czyPlikJestPusty();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+    int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+    int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
 
 
