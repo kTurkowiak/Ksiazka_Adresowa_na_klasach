@@ -18,7 +18,7 @@ int main()
     char wybor;
 
        while (true)
-    {
+    {   cout<<"idZalogowanegoUzytkownika->"<<idZalogowanegoUzytkownika<<endl<<endl; // do pozniejszego usuniecia
         if (idZalogowanegoUzytkownika == 0)
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
@@ -55,7 +55,8 @@ int main()
             switch (wybor)
             {
             case '1':
-            ksiazkaAdresowa.dodajAdresata();
+            ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika);
+
             //    idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
                 break;
             //case '2':

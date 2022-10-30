@@ -61,9 +61,9 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     return wybor;
 }
 
-void KsiazkaAdresowa::dodajAdresata()
+void KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika)
 {
-    adresatMenedzer.dodajAdresata();
+    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
 }
 
 //void KsiazkaAdresowa::wyswietlWszystkichAdresatow()

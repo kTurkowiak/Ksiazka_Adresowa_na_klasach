@@ -28,7 +28,7 @@ public:
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
-    void dodajAdresata();
+    void dodajAdresata(int idZalogowanegoUzytkownika);
     //void wyswietlWszystkichAdresatow():
 
 };

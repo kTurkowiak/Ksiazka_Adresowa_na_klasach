@@ -5,7 +5,7 @@ AdresatMenedzer::AdresatMenedzer()
 
 }
 
-void AdresatMenedzer::dodajAdresata()
+void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
 
     Adresat adresat;
@@ -14,7 +14,7 @@ void AdresatMenedzer::dodajAdresata()
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
 
 
-    adresat = podajDaneNowegoAdresata();
+    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
     //adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
 
     adresaci.push_back(adresat);
@@ -23,11 +23,11 @@ void AdresatMenedzer::dodajAdresata()
     //return ++idOstatniegoAdresata;
 }
 
-Adresat AdresatMenedzer::podajDaneNowegoAdresata()
+Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     int idOstatniegoAdresata = 0; //do pozniejszego usuniecia
-    int idZalogowanegoUzytkownika = 1;
+    //int idZalogowanegoUzytkownika = 1; // do pozniejszego przerobienia
 
     adresat.ustawIdAdresata(++idOstatniegoAdresata);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
@@ -87,6 +87,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
     cout << endl << "Id:                 " << adresat.pobierzIdAdresata() << endl;
+    cout << "IdUzytkownika:      " << adresat.pobierzIdUzytkownika() << endl;   //do pozniejszego usuniecia
     cout << "Imie:               " << adresat.pobierzImie()<< endl;
     cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
     cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;

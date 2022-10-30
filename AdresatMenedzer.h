@@ -24,11 +24,11 @@ class AdresatMenedzer
 
 public:
     AdresatMenedzer();
-    void dodajAdresata();
+    void dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
 
 private:
-    Adresat podajDaneNowegoAdresata();
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
 };
