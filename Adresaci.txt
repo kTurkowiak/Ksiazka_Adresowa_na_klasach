@@ -1,4 +1,5 @@
 
-1|1|Pierwszy|Adresat|o ID 1|przyporzadkowany do Kamila|dsa|
-2|1|Drugi|Adresat|o ID 2|przyporzadkowany do Kamila|das|
-3|2|Pierwszy|Adresat|przyporzadkowany do Ady|ds|gdsa|
+1|1|Sd|Ds|ds|ds|ds|
+2|2|Ds|Ds|ds|ds|ds|
+3|2|Fds|Fds|fds|fds|fds|
+4|1|Fd|Gfd|dfh|hfd|hfd|

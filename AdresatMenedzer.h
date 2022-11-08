@@ -20,6 +20,8 @@ class AdresatMenedzer
 {
 
     vector <Adresat> adresaci;
+    PlikZAdresatami plikZAdresatami;
+    int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
 
 public:
@@ -27,28 +29,30 @@ public:
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     void wyswietlWszystkichAdresatow();
 
+    AdresatMenedzer(string nazwaPlikuZAdresatami)
+        : plikZAdresatami(nazwaPlikuZAdresatami)
+        {
+            //adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+        }
     void dopiszAdresataDoPliku(Adresat adresat);
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku (int idZalogowanegoUzytkownika);
-    void wylogowanie();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku (int idZalogowanegoUzytkownika);
+
 
 private:
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
-    bool czyPlikJestPusty();
-    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-    int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-    int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-
-
-
 
 
 };
 
 
-
+/*
+    AdresatMenedzer(string nazwaPlikuZAdresatami, int IdZalogowanegoUzytkownika)
+        : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(IdZalogowanegoUzytkownika) {
+            adresaci = PlikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(
+    };
+*/
 
 
 

@@ -11,14 +11,14 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
 
-int KsiazkaAdresowa::logowanieUzytkownika()
+void KsiazkaAdresowa::logowanieUzytkownika()
 {
     uzytkownikMenedzer.logowanieUzytkownika();
 }
 
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
-    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
@@ -61,9 +61,11 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     return wybor;
 }
 
-int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+int KsiazkaAdresowa::dodajAdresata( int idOstatniegoAdresata)
 {
     int id;
+    int idZalogowanegoUzytkownika; //do przerobienia
+    idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
     id = adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
     return id;
 }
@@ -73,14 +75,20 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     adresatMenedzer.wyswietlWszystkichAdresatow();
 }
 
-int KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
+void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    int id;
-    id = adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-    return id;
+    int idZalogowanegoUzytkownika; //do przerobienia
+    idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+
 }
 
 void KsiazkaAdresowa::wylogowanie()
 {
-    adresatMenedzer.wylogowanie();
+    uzytkownikMenedzer.wylogowanie();
+}
+
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+{
+    return uzytkownikMenedzer.czyUzytkownikJestZalogowany();
 }

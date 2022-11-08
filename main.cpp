@@ -6,22 +6,18 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt");  //przesyla nazwe pliku do kolejnych klas wykorzystujac listy inicjalizacyjne w kolejnych klasach
+    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt");  //przesyla nazwe pliku do kolejnych klas wykorzystujac listy inicjalizacyjne w kolejnych klasach
 
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow(); //do usuniêcia
 
-    //ksiazkaAdresowa.rejestracjaUzytkownika();
-    //ksiazkaAdresowa.rejestracjaUzytkownika();
-   // ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-   // ksiazkaAdresowa.logowanieUzytkownika();
-    int idZalogowanegoUzytkownika = 0;
+
     int idOstatniegoAdresata = 0;
     char wybor;
 
        while (true)
     {
 
-        if (idZalogowanegoUzytkownika == 0)
+        if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
@@ -31,8 +27,7 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
-
+                ksiazkaAdresowa.logowanieUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -50,13 +45,13 @@ int main()
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-            idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+            ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
             case '1':
-                idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idOstatniegoAdresata);
                 break;
             //case '2':
             //    wyszukajAdresatowPoImieniu(adresaci);
@@ -78,11 +73,10 @@ int main()
                 break;
             */
             case '7':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
 
             case '8':
-                idZalogowanegoUzytkownika = 0;
                 ksiazkaAdresowa.wylogowanie();
                 break;
             }

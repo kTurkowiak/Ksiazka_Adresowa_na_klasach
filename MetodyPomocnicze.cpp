@@ -18,7 +18,6 @@ string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
 }
 
 
-
 char MetodyPomocnicze::wczytajZnak()
 {
     string wejscie = "";
