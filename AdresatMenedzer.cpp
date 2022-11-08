@@ -8,8 +8,10 @@ int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatnie
     Adresat adresat;
 
     //system("cls");
-    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-
+    //cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+    //cout << " idOstatniegoAdresata na wejscieu do AdresatMenedzer:dodajAdresata->" <<idOstatniegoAdresata<< endl << endl;
+    idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
+    //cout << " idOstatniegoAdresata na wyjsciu do AdresatMenedzer:dodajAdresata->" <<idOstatniegoAdresata<< endl << endl;
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
 
     adresaci.push_back(adresat);

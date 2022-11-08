@@ -25,7 +25,7 @@ public:
 
 
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku (int idZalogowanegoUzytkownika);
-
+    int pobierzIdOstatniegoAdresata();
 
 private:
 
