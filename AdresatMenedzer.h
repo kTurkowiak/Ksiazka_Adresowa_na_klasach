@@ -26,7 +26,7 @@ class AdresatMenedzer
 
 public:
 
-    int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    void dodajAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
 
     AdresatMenedzer(string nazwaPlikuZAdresatami)
@@ -36,6 +36,7 @@ public:
         }
     void dopiszAdresataDoPliku(Adresat adresat);
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku (int idZalogowanegoUzytkownika);
+
 
 
 private:

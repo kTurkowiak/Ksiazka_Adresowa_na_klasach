@@ -86,9 +86,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
         idOstatniegoAdresata = 0;
     }
-
     plikTekstowy.close();
-
 
     if (daneOstaniegoAdresataWPliku != "")
     {
@@ -111,7 +109,6 @@ int PlikZAdresatami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(st
 {
     int pozycjaRozpoczeciaIdUzytkownika = daneJednegoAdresataOddzielonePionowymiKreskami.find_first_of('|') + 1;
     int idUzytkownika = MetodyPomocnicze::konwersjaStringNaInt(MetodyPomocnicze::pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdUzytkownika));
-
     return idUzytkownika;
 }
 
@@ -133,24 +130,31 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
             {
             case 1:
                 adresat.ustawIdAdresata(atoi(pojedynczaDanaAdresata.c_str()));
+
                 break;
             case 2:
                 adresat.ustawIdUzytkownika(atoi(pojedynczaDanaAdresata.c_str()));
+
                 break;
             case 3:
                 adresat.ustawImie(pojedynczaDanaAdresata);
+
                 break;
             case 4:
                 adresat.ustawNazwisko(pojedynczaDanaAdresata);
+
                 break;
             case 5:
                 adresat.ustawNumerTelefonu(pojedynczaDanaAdresata);
+
                 break;
             case 6:
                 adresat.ustawEmail(pojedynczaDanaAdresata);
+
                 break;
             case 7:
                 adresat.ustawAdres(pojedynczaDanaAdresata);
+
                 break;
             }
             pojedynczaDanaAdresata = "";

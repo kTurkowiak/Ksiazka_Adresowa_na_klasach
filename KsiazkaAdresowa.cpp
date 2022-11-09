@@ -25,7 +25,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;
 
-    //system("cls");
+    system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Rejestracja" << endl;
@@ -42,7 +42,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
     char wybor;
 
-    //system("cls");
+    system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
@@ -61,13 +61,13 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     return wybor;
 }
 
-int KsiazkaAdresowa::dodajAdresata( int idOstatniegoAdresata)
+void KsiazkaAdresowa::dodajAdresata()
 {
-    int id;
-    int idZalogowanegoUzytkownika; //do przerobienia
+
+    int idZalogowanegoUzytkownika; //do pr
     idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
-    id = adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
-    return id;
+    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
+
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
@@ -77,7 +77,7 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 
 void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    int idZalogowanegoUzytkownika; //do przerobienia
+    int idZalogowanegoUzytkownika; //do pr
     idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
     adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 
@@ -92,3 +92,4 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     return uzytkownikMenedzer.czyUzytkownikJestZalogowany();
 }
+

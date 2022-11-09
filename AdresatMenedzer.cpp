@@ -2,21 +2,20 @@
 
 
 
-int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
 
     Adresat adresat;
+    int idOstatniegoAdresata;
+    system("cls");
 
-    //system("cls");
-    //cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    //cout << " idOstatniegoAdresata na wejscieu do AdresatMenedzer:dodajAdresata->" <<idOstatniegoAdresata<< endl << endl;
     idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
-    //cout << " idOstatniegoAdresata na wyjsciu do AdresatMenedzer:dodajAdresata->" <<idOstatniegoAdresata<< endl << endl;
+
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
 
     adresaci.push_back(adresat);
     dopiszAdresataDoPliku(adresat);
-    return ++idOstatniegoAdresata;
+
 }
 
 Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
@@ -59,10 +58,10 @@ string AdresatMenedzer::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
 
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
-    //system("cls");
+    system("cls");
     if (!adresaci.empty())
     {
-        cout << "vector size na wejsciu->" << adresaci.size() << endl;  //do pozniejszego usuniecia
+
         cout << "             >>> ADRESACI <<<" << endl;
         cout << "-----------------------------------------------" << endl;
         for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
@@ -75,7 +74,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
     {
         cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
     }
-    cout << "vector size na wyjsciu->" << adresaci.size() << endl;  //do pozniejszego usuniecia
+
     system("pause");
 }
 
@@ -83,7 +82,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
     cout << endl << "Id:                 " << adresat.pobierzIdAdresata() << endl;
-    cout << "IdUzytkownika:      " << adresat.pobierzIdUzytkownika() << endl;   //do pozniejszego usuniecia
+    //cout << "IdUzytkownika:      " << adresat.pobierzIdUzytkownika() << endl;   //do pozniejszego usuniecia
     cout << "Imie:               " << adresat.pobierzImie()<< endl;
     cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
     cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
@@ -99,5 +98,6 @@ void AdresatMenedzer::dopiszAdresataDoPliku(Adresat adresat)
 
 void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku (int idZalogowanegoUzytkownika)
 {
-    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku (idZalogowanegoUzytkownika);
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku (idZalogowanegoUzytkownika);
 }
+

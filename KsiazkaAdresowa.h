@@ -29,11 +29,12 @@ public:
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    int dodajAdresata(int idOstatniegoAdresata);
+    void dodajAdresata();
     void wyswietlWszystkichAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wylogowanie();
     bool czyUzytkownikJestZalogowany();
+
 
 };
 
