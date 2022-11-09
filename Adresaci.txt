@@ -1,4 +1,8 @@
 
-1|1|Pierwszy|Adresat|o ID 1|przyporzadkowany do Kamila|dsa|
-2|1|Drugi|Adresat|o ID 2|przyporzadkowany do Kamila|das|
-3|2|Pierwszy|Adresat|przyporzadkowany do Ady|ds|gdsa|
+1|1|Gfd|Fhds|jhrt|jnhrt|hjr|
+2|3|Dsa|G|r4hbt|rh|rtj|
+3|4|Btghrt|Rthjr4|jn|rtjrt|hsrt|
+4|4|Hsdfghs|Bs|fng|fsm|t|
+5|3|Fdhs|Htr|thr|th|r|
+6|3|Dsa|Fas|gdas|ghewr|hre|
+7|1|Kamil|Jan|502|fsah@|Gownowawa|
