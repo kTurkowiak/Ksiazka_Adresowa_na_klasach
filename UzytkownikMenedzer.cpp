@@ -9,10 +9,8 @@ int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
-
     uzytkownicy.push_back(uzytkownik);
     plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
-
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
 }
@@ -21,17 +19,14 @@ Uzytkownik UzytkownikMenedzer:: podajDaneNowegoUzytkownika()
 {
     Uzytkownik uzytkownik;
     uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
-
     do
     {
         cout << "Podaj login: ";
         uzytkownik.ustawLogin(MetodyPomocnicze::wczytajLinie());
 
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
-
     cout << "Podaj haslo: ";
     uzytkownik.ustawHaslo(MetodyPomocnicze::wczytajLinie());
-
     return uzytkownik;
 }
 
@@ -54,7 +49,6 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login)
         }
     }
     return false;
-
 }
 
   void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
@@ -67,15 +61,12 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login)
     }
 }
 
-
 void UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
-
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();
-
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
     {
@@ -85,7 +76,6 @@ void UzytkownikMenedzer::logowanieUzytkownika()
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
                 haslo = MetodyPomocnicze::wczytajLinie();
-
                 if (itr -> pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
@@ -110,7 +100,6 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
     noweHaslo = MetodyPomocnicze::wczytajLinie();
-
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
         if (itr -> pobierzId() == idZalogowanegoUzytkownika)
@@ -133,5 +122,4 @@ bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
 void UzytkownikMenedzer::wylogowanie()
 {
     idZalogowanegoUzytkownika = 0;
-
 }

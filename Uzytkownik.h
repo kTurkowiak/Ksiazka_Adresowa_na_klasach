@@ -12,22 +12,13 @@ class Uzytkownik
     string login;
     string haslo;
 
-
 public:
     void ustawId(int noweId);
     void ustawLogin(string nowyLogin);
     void ustawHaslo(string noweHaslo);
-
     int pobierzId();
     string pobierzLogin();
     string pobierzHaslo();
-
-
-
-
-
-
-
 };
 
 #endif

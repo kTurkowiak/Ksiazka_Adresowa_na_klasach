@@ -1,6 +1,5 @@
 #include "KsiazkaAdresowa.h"
 
-
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
     uzytkownikMenedzer.rejestracjaUzytkownika();
@@ -18,7 +17,6 @@ void KsiazkaAdresowa::logowanieUzytkownika()
     {
         adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
     }
-
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
@@ -29,8 +27,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;
-
-    //system("cls");
+    system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Rejestracja" << endl;
@@ -39,15 +36,13 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
-
     return wybor;
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
     char wybor;
-
-    //system("cls");
+    system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
@@ -62,7 +57,6 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
-
     return wybor;
 }
 
@@ -78,10 +72,7 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 
 void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    int idZalogowanegoUzytkownika; //do pr
-    idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
-    adresatMenedzer->wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-
+    adresatMenedzer->wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 }
 
 void KsiazkaAdresowa::wylogowanie()

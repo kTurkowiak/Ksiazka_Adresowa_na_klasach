@@ -6,7 +6,6 @@
 #include "UzytkownikMenedzer.h"
 #include "AdresatMenedzer.h"
 
-
 using namespace std;
 
 class KsiazkaAdresowa
@@ -15,18 +14,13 @@ class KsiazkaAdresowa
     AdresatMenedzer *adresatMenedzer;
     const string NAZWA_PLIKU_Z_ADRESATAMI;
 
-
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
     : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {
         adresatMenedzer = NULL;
     };
-    ~KsiazkaAdresowa()
-    {
-      delete   adresatMenedzer;
-      adresatMenedzer = NULL;
-    };
+
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
@@ -39,7 +33,11 @@ public:
     void wylogowanie();
     bool czyUzytkownikJestZalogowany();
 
-
+    ~KsiazkaAdresowa()
+    {
+      delete   adresatMenedzer;
+      adresatMenedzer = NULL;
+    };
 };
 
 

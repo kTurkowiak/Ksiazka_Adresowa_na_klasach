@@ -70,4 +70,3 @@ string Adresat::pobierzAdres()
     return adres;
 }
 
-

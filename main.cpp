@@ -2,27 +2,17 @@
 
 #include "KsiazkaAdresowa.h"
 
-//skonwertowaæ ID zalogowanego uzytkownika w klasie Adresaci Menedzer do wskaznika i przerobic go na liste inicjalizujaca/wskaznik
-//PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) //przerobić na odczyt IDZalogowanego uzytkownika ze stałej
-
-
-
-
 using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt");  //przesyla nazwe pliku do kolejnych klas wykorzystujac listy inicjalizacyjne w kolejnych klasach
-
+    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
-
        while (true)
     {
-
         if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
-
             switch (wybor)
             {
             case '1':
@@ -42,9 +32,7 @@ int main()
         }
         else
         {
-            ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();   //przenieść do wnętrza programu
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
-
             switch (wybor)
             {
             case '1':
