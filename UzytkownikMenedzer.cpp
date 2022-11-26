@@ -126,7 +126,8 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
 {
     if (idZalogowanegoUzytkownika >0) return true;
-    else return false;
+    else
+        return false;
 }
 
 void UzytkownikMenedzer::wylogowanie()

@@ -2,7 +2,7 @@
 
 
 
-void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
+void AdresatMenedzer::dodajAdresata()
 {
 
     Adresat adresat;
@@ -11,7 +11,7 @@ void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 
     idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
 
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata(ID_ZALOGOWANEGO_UZYTKOWNIKA, idOstatniegoAdresata);
 
     adresaci.push_back(adresat);
     dopiszAdresataDoPliku(adresat);
