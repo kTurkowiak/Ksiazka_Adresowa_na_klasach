@@ -2,7 +2,8 @@
 
 #include "KsiazkaAdresowa.h"
 
-//skonwertowa� ID zalogowanego uzytkownika w klasie Adresaci Menedzer do wskaznika i przerobic go na liste inicjalizujaca/wskaznik
+//skonwertowaæ ID zalogowanego uzytkownika w klasie Adresaci Menedzer do wskaznika i przerobic go na liste inicjalizujaca/wskaznik
+//PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) //przerobić na odczyt IDZalogowanego uzytkownika ze stałej
 
 
 
@@ -41,7 +42,7 @@ int main()
         }
         else
         {
-            ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+            ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();   //przenieść do wnętrza programu
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)

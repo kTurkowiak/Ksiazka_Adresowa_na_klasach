@@ -25,9 +25,9 @@ public:
     UzytkownikMenedzer (string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
         idZalogowanegoUzytkownika = 0;
         uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+
     };
     int pobierzIdZalogowanegoUzytkownika();
-    void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika ();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();

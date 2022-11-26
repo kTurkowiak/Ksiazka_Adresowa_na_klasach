@@ -16,11 +16,12 @@ using namespace std;
 
 class PlikZAdresatami
 {
-    string nazwaPlikuZAdresatami;
+   const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
 
+
 public:
-    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};     //stworzernie konstruktora z lista inicjalizacyjna, tak aby byla przyporzadkowana stala cons "Adresaci.txt"
+    PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {};     //stworzernie konstruktora z lista inicjalizacyjna, tak aby byla przyporzadkowana stala cons "Adresaci.txt"
     void dopiszAdresataDoPliku(Adresat adresat);
 
 
