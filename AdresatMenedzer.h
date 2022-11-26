@@ -14,48 +14,28 @@
 
 using namespace std;
 
-
-
 class AdresatMenedzer
 {
-
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-    int ID_ZALOGOWANEGO_UZYTKOWNIKA;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
-
-public:
-
-    void dodajAdresata(int idZalogowanegoUzytkownika);
-    void wyswietlWszystkichAdresatow();
-
-    AdresatMenedzer(string nazwaPlikuZAdresatami)
-        : plikZAdresatami(nazwaPlikuZAdresatami)
-        {
-            //adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-        }
-    void dopiszAdresataDoPliku(Adresat adresat);
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku (int idZalogowanegoUzytkownika);
-
-
-
-private:
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
 
+public:
+    AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
+        : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+        {
+            adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+        }
+    void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
+    void dopiszAdresataDoPliku(Adresat adresat);
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 
 };
-
-
-/*
-    AdresatMenedzer(string nazwaPlikuZAdresatami, int IdZalogowanegoUzytkownika)
-        : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(IdZalogowanegoUzytkownika) {
-            adresaci = PlikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(
-    };
-*/
-
-
 
 
 #endif

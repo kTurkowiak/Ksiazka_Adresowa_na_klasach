@@ -1,6 +1,5 @@
 #include "KsiazkaAdresowa.h"
 
-
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
     uzytkownikMenedzer.rejestracjaUzytkownika();
@@ -14,6 +13,10 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 void KsiazkaAdresowa::logowanieUzytkownika()
 {
     uzytkownikMenedzer.logowanieUzytkownika();
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+    }
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
@@ -24,7 +27,6 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;
-
     system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
     cout << "---------------------------" << endl;
@@ -34,14 +36,12 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
-
     return wybor;
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
     char wybor;
-
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
@@ -57,35 +57,29 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
-
     return wybor;
 }
 
 void KsiazkaAdresowa::dodajAdresata()
 {
-
-    int idZalogowanegoUzytkownika; //do pr
-    idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
-    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika);
-
+    adresatMenedzer->dodajAdresata();
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-    adresatMenedzer.wyswietlWszystkichAdresatow();
+    adresatMenedzer->wyswietlWszystkichAdresatow();
 }
 
 void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    int idZalogowanegoUzytkownika; //do pr
-    idZalogowanegoUzytkownika = uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
-    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-
+    adresatMenedzer->wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 }
 
 void KsiazkaAdresowa::wylogowanie()
 {
     uzytkownikMenedzer.wylogowanie();
+    delete adresatMenedzer;
+    adresatMenedzer = NULL;
 }
 
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()

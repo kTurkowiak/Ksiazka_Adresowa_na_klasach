@@ -1,13 +1,11 @@
 #include "MetodyPomocnicze.h"
 
-
 string MetodyPomocnicze::wczytajLinie()
 {
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
 }
-
 
 string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
 {
@@ -16,7 +14,6 @@ string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
     string str = ss.str();
     return str;
 }
-
 
 char MetodyPomocnicze::wczytajZnak()
 {

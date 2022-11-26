@@ -6,17 +6,13 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt");  //przesyla nazwe pliku do kolejnych klas wykorzystujac listy inicjalizacyjne w kolejnych klasach
-
+    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
-
        while (true)
     {
-
         if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
-
             switch (wybor)
             {
             case '1':
@@ -36,9 +32,7 @@ int main()
         }
         else
         {
-            ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
-
             switch (wybor)
             {
             case '1':
