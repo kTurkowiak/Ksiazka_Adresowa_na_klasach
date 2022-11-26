@@ -13,13 +13,15 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
 
-        if (czyPlikJestPusty() == true)
+        if (czyPlikJestPusty()==true)
         {
             plikTekstowy << liniaZDanymiUzytkownika;
+
         }
         else
         {
             plikTekstowy << endl << liniaZDanymiUzytkownika ;
+
         }
     }
     else
@@ -30,7 +32,9 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 bool PlikZUzytkownikami::czyPlikJestPusty()
 {
     fstream plikTekstowy;
-    plikTekstowy.seekg(0, ios::end);
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
+    plikTekstowy.seekg(0, ios_base::end);
+
     if (plikTekstowy.tellg() == 0)
     {
         plikTekstowy.close();
@@ -43,6 +47,8 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
     }
 
 }
+
+
 
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
@@ -138,4 +144,5 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
         cout << "Nie mozna otworzyc pliku " << nazwaPlikuZUzytkownikami << endl;
     }
     plikTekstowy.close();
+    system("pause");
 }

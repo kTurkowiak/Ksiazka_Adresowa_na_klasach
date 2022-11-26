@@ -2,6 +2,11 @@
 
 #include "KsiazkaAdresowa.h"
 
+//skonwertowaæ ID zalogowanego uzytkownika w klasie Adresaci Menedzer do wskaznika i przerobic go na liste inicjalizujaca/wskaznik
+
+
+
+
 using namespace std;
 
 int main()
