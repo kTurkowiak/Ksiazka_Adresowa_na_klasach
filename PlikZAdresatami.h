@@ -32,6 +32,9 @@ public:
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku (int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
     void usunAdresataZpliku(int idUsuwanegoAdresata);
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata); //do zmiany
+    void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami); //do zminy
 };
 
 
