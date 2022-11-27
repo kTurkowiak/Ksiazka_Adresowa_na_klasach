@@ -2,6 +2,12 @@
 
 #include "KsiazkaAdresowa.h"
 
+//Dodaj do aplikacji obiektowej pozosta³e funkcjonalnoœci w tym zwróæ szczególn¹ uwagê, aby stworzyæ edycjê i
+//usuwanie adresata w sposób optymalny przedstawiony na powy¿szym seminarium.
+//Nie zapomnij o funkcjonalnoœciach wyszukiwania adresatów po imieniu jak i po nazwisku.
+
+//Wykonaj dziedziczenie klasy PlikzZUzytkownikami i PlikZAdresatami
+
 using namespace std;
 
 int main()
@@ -38,10 +44,9 @@ int main()
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
                 break;
-            //case '2':
-            //    wyszukajAdresatowPoImieniu(adresaci);
-                //break;
-
+            case '2':
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
+                break;
             //case '3':
             //    wyszukajAdresatowPoNazwisku(adresaci);
             //    break;

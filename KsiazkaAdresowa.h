@@ -32,6 +32,7 @@ public:
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wylogowanie();
     bool czyUzytkownikJestZalogowany();
+    void wyszukajAdresatowPoImieniu();
 
     ~KsiazkaAdresowa()
     {
