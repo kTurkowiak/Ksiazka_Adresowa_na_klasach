@@ -36,6 +36,7 @@ public:
     void dopiszAdresataDoPliku(Adresat adresat);
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 
 };
 

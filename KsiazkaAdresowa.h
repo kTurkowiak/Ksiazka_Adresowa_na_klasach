@@ -33,6 +33,7 @@ public:
     void wylogowanie();
     bool czyUzytkownikJestZalogowany();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 
     ~KsiazkaAdresowa()
     {
