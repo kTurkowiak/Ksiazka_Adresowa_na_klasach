@@ -6,6 +6,8 @@
 //usuwanie adresata w sposób optymalny przedstawiony na powy¿szym seminarium.
 //Nie zapomnij o funkcjonalnoœciach wyszukiwania adresatów po imieniu jak i po nazwisku.
 
+
+
 //Wykonaj dziedziczenie klasy PlikzZUzytkownikami i PlikZAdresatami
 
 using namespace std;
@@ -53,19 +55,17 @@ int main()
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
-                /*
             case '5':
-                idUsunietegoAdresata = usunAdresata(adresaci);
-                idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                //idUsunietegoAdresata = usunAdresata(adresaci);
+                ksiazkaAdresowa.usunAdresata();
+                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
-            case '6':
-                edytujAdresata(adresaci);
-                break;
-            */
+            //case '6':
+            //    edytujAdresata(adresaci);
+            //    break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
-
             case '8':
                 ksiazkaAdresowa.wylogowanie();
                 break;

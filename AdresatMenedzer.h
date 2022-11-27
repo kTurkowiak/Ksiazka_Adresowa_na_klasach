@@ -20,10 +20,11 @@ class AdresatMenedzer
     PlikZAdresatami plikZAdresatami;
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    int podajIdWybranegoAdresata();
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
@@ -33,10 +34,10 @@ public:
         }
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void dopiszAdresataDoPliku(Adresat adresat);
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
 
 };
 

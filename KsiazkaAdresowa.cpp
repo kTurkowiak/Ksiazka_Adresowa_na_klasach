@@ -70,11 +70,6 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     adresatMenedzer->wyswietlWszystkichAdresatow();
 }
 
-void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
-{
-    adresatMenedzer->wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-}
-
 void KsiazkaAdresowa::wylogowanie()
 {
     uzytkownikMenedzer.wylogowanie();
@@ -96,3 +91,10 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
 {
     adresatMenedzer->wyszukajAdresatowPoNazwisku();
 }
+
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenedzer->usunAdresata();
+}
+
+

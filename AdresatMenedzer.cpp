@@ -6,16 +6,16 @@ void AdresatMenedzer::dodajAdresata()
     int idOstatniegoAdresata;
     system("cls");
     idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
-    adresat = podajDaneNowegoAdresata(ID_ZALOGOWANEGO_UZYTKOWNIKA, idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata(idOstatniegoAdresata);
     adresaci.push_back(adresat);
-    dopiszAdresataDoPliku(adresat);
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
 }
 
-Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idOstatniegoAdresata)
 {
     Adresat adresat;
     adresat.ustawIdAdresata(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
     adresat.ustawImie(zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie()));
@@ -71,15 +71,6 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 
-void AdresatMenedzer::dopiszAdresataDoPliku(Adresat adresat)
-{
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-}
-
-void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku ()
-{
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku (ID_ZALOGOWANEGO_UZYTKOWNIKA);
-}
 
 void AdresatMenedzer::wyszukajAdresatowPoImieniu()
 {
@@ -151,3 +142,56 @@ void AdresatMenedzer::wyszukajAdresatowPoNazwisku()
     cout << endl;
     system("pause");
 }
+
+void AdresatMenedzer::usunAdresata()  //na pewno nie int tylko void
+{
+    int idUsuwanegoAdresata = 0;
+    int numerLiniiUsuwanegoAdresata = 0;
+
+    system("cls");
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+    idUsuwanegoAdresata = podajIdWybranegoAdresata();
+
+    char znak;
+    bool czyIstniejeAdresat = false;
+
+    for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+    {
+        if (itr -> pobierzIdAdresata()  == idUsuwanegoAdresata)
+        {
+            czyIstniejeAdresat = true;
+            cout << endl << "Potwierdz naciskajac klawisz 't': ";
+            znak = MetodyPomocnicze::wczytajZnak();
+            if (znak == 't')
+            {
+                //numerLiniiUsuwanegoAdresata = plikZAdresatami.zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);    //
+                plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);                                     //przerobic na 1 funkcje usunWybranegoAdresataZPliku (idUsuwanegoAdresata)
+                adresaci.erase(itr);
+                cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
+                system("pause");
+                //return idUsuwanegoAdresata;
+            }
+            else
+            {
+                cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
+                system("pause");
+                //return 0;
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false)
+    {
+        cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
+        system("pause");
+    }
+    //return 0;
+}
+
+int AdresatMenedzer::podajIdWybranegoAdresata()
+{
+    int idWybranegoAdresata = 0;
+    cout << "Podaj numer ID Adresata: ";
+    idWybranegoAdresata  = MetodyPomocnicze::wczytajLiczbeCalkowita();
+    return idWybranegoAdresata;
+}
+
