@@ -4,6 +4,8 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,6 +18,7 @@ public:
     static char wczytajZnak();
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
     static int konwersjaStringNaInt(string liczba);
+    static int wczytajLiczbeCalkowita();
 };
 
 #endif

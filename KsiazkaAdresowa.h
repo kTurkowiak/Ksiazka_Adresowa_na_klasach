@@ -29,13 +29,16 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wylogowanie();
     bool czyUzytkownikJestZalogowany();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
+    void edytujAdresata();
 
     ~KsiazkaAdresowa()
     {
-      delete   adresatMenedzer;
+      delete adresatMenedzer;
       adresatMenedzer = NULL;
     };
 };
