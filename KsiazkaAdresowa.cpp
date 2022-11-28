@@ -27,7 +27,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;
-    //system("cls");
+    system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Rejestracja" << endl;
@@ -42,7 +42,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
     char wybor;
-    //system("cls");
+    system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;

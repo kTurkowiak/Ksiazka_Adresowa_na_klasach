@@ -71,7 +71,6 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 
-
 void AdresatMenedzer::wyszukajAdresatowPoImieniu()
 {
     string imiePoszukiwanegoAdresata = "";
@@ -192,7 +191,7 @@ int AdresatMenedzer::podajIdWybranegoAdresata()
 
 void AdresatMenedzer::edytujAdresata()
 {
-    //system("cls");
+    system("cls");
     Adresat adresat;
     int idEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
@@ -205,7 +204,7 @@ void AdresatMenedzer::edytujAdresata()
 
     for (int i = 0; i < (int) adresaci.size(); i++)
     {
-        if ((int) adresaci[i].pobierzIdAdresata() == idEdytowanegoAdresata)   //do edycji [i]
+        if ((int) adresaci[i].pobierzIdAdresata() == idEdytowanegoAdresata)
         {
             czyIstniejeAdresat = true;
             wybor = wybierzOpcjeZMenuEdycja();
