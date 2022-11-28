@@ -234,7 +234,7 @@ void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
 
 void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 {
-    int numerLiniiEdytowanegoAdresata = 0;
+
     string liniaZDanymiAdresata = "";
     zaktualizujDaneWybranegoAdresataWPliku (adresat);
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
@@ -286,7 +286,7 @@ void PlikZAdresatami::zaktualizujDaneWybranegoAdresataWPliku(Adresat adresat)
                 }
             }
         }
-        if (czyIstniejeAdresat = false)
+        if (czyIstniejeAdresat == false)
         {
             cout << endl << endl << "Nie znaleziono adresata w ksiazce adresowej." << endl << endl;
         }
